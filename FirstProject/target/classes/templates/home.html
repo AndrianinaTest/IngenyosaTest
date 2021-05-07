@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>
+Test Ingenyosa
+</title>
+<style>
+table {
+	border-collapse : collapse;
+}
+table , th , td {
+
+border: 8px solidblack;
+}
+</style>
+</head>
+
+<body>
+
+<!-- include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2> Voici les list Des Voitures</h2>
+
+<table border="5">
+<tr> 
+	<th>Id</th>
+	<th>Model</th>
+	<th>Numero de matriculation </th>
+	<th> Puissance </th>
+</tr>
+
+<tr th:each="voiture : $voiture">
+	<td th:utext="${voiture.id_voiture}"> </td>
+	<td th:utext="${$voiture.Model}"> </td>
+	<td th:utext="${voiture.NumMatri}"> </td>
+	<td th:utext="${voiture.Puissance}"> </td>
+</tr>
+</table>
+</body>
+</html>
